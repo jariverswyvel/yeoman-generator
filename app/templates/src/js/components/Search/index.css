@@ -1,0 +1,14 @@
+.input-search-icon {
+  position: absolute;
+  font-size: 2rem;
+  top: calc(50% - 1rem);
+  left: 1rem;
+}
+
+.search-input-holder {
+  margin: 0;
+}
+
+.search-input {
+  padding-left: 4rem;
+}

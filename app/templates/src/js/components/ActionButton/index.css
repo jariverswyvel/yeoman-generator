@@ -1,0 +1,65 @@
+@import '../../../css/vars.css';
+
+.button-action {
+  box-shadow: var(--boxshadow);
+  color: white;
+  padding: 1rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+  filter: grayscale(.2);
+  background: var(--blue);
+  position: relative;
+  width: fit-content;
+
+  &-no-bg {
+    background-color: transparent !important;
+    box-shadow: unset !important;
+    color: black;
+
+    &.red:hover {
+      color: var(--red);
+    }
+
+    &.blue:hover {
+      color: var(--blue);
+    }
+
+    &.green:hover {
+      color: var(--green);
+    }
+  }
+
+  & p:first-of-type {
+    margin-right: .5rem;
+  }
+
+  & > p:only-of-type {
+    margin-right: 0 !important;
+  }
+
+  &.blue {
+    background: var(--blue);
+  }
+
+  &.green {
+    background: var(--green);
+  }
+
+  &.red {
+    background: var(--red);
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &:hover {
+    filter: grayscale(0);
+  }
+
+  &:active {
+    top: .1rem;
+    box-shadow: 0rem 0 .2rem rgba(0, 0, 0, .3);
+  }
+}

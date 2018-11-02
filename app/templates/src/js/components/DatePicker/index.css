@@ -1,0 +1,215 @@
+@import '../../../css/vars.css';
+
+.datepicker-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  width: 100vw;
+  height: 100vh;
+}
+
+.datepicker-willunmount .datepicker {
+  animation: datepicker_slide_out .3s 1;
+}
+
+.yearpicker-willunmount.datepicker-yearpicker {
+  animation: yearpicker_slide_out .3s 1;
+}
+
+.datepicker {
+  width: 40rem;
+  background-color: white;
+  box-shadow: var(--boxshadow);
+  padding: 2rem 3rem;
+  border-radius: .3rem;
+  position: absolute;
+  z-index: 2100;
+  animation: datepicker_slide_in .3s 1;
+
+  &-title {
+    opacity: .5;
+  }
+
+  &-month-year {
+    font-weight: 500;
+    position: relative;
+  }
+
+  &-actions {
+    margin-top: 2rem;
+  }
+
+  & .button-action {
+    font-size: 1.3rem;
+    margin: 0 .5rem;
+  }
+
+  &-week {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-day {
+    font-size: 1.3rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    margin: .5rem;
+
+    &::after {
+      content: '';
+      background-color: lightgrey;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      z-index: -1;
+      transform: scale(0);
+      transition: transform .2s;
+    }
+
+    &_selected {
+      color: white;
+
+      &::after {
+        transition: background-color .2s;
+        background-color: var(--green, green);
+        transform: scale(1);
+      }
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &_today {
+      color: white;
+
+      &::after {
+        transition: background-color .2s;
+        background-color: var(--blue, blue);
+        transform: scale(1);
+      }
+    }
+  }
+
+  &-header {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+
+    &-actions {
+      margin-left: 1rem;
+
+      & i {
+        font-size: 2rem;
+        margin: 0 1rem;
+        transition: transform .1s;
+
+        &:active {
+          transform: scale(.9);
+        }
+      }
+    }
+  }
+
+  &-yearpicker {
+    position: absolute;
+    top: 3rem;
+    right: -4rem;
+    height: 30rem;
+    background-color: white;
+    box-shadow: var(--boxshadow);
+    border-radius: .3rem;
+    padding: .5rem 3rem;
+    z-index: 2;
+    animation: yearpicker_slide_in .3s 1;
+
+    &_selected {
+      font-size: 2.5rem;
+      padding: 1rem 0;
+      color: var(--blue, blue);
+      font-weight: 600;
+    }
+
+    &-list {
+      max-height: 100%;
+      overflow-y: scroll;
+      text-align: center;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        background-color: transparent;
+        display: none;
+      }
+
+      & li {
+        margin: 1rem 0;
+        cursor: pointer;
+        transition: color .2s;
+
+        &:hover {
+          color: var(--blue, blue);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+@keyframes datepicker_slide_in {
+  from {
+    opacity: 0;
+    transform: translateY(-20rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes datepicker_slide_out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-20rem);
+  }
+}
+
+@keyframes yearpicker_slide_in {
+  from {
+    opacity: 0;
+    transform: translateY(-7rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes yearpicker_slide_out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-7rem);
+  }
+}

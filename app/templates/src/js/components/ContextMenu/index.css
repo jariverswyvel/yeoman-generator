@@ -1,0 +1,11 @@
+@import '../../../css/vars.css';
+
+.contextmenu {
+  border-radius: .5rem;
+  box-shadow: var(--boxshadow);
+  background-color: #f7f7f7;
+  color: black;
+  position: absolute;
+  z-index: 9999;
+  font-size: 1.5rem;
+}

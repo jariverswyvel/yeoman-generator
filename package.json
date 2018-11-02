@@ -1,0 +1,33 @@
+{
+  "name": "generator-tntap",
+  "version": "0.1.4",
+  "description": "boilerplate for TnTap",
+  "author": "Jari Verswyvel",
+  "main": "app/index.js",
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "global": "^4.3.1",
+    "lodash": "^4.17.11",
+    "mkdirp": "^0.5.1",
+    "update-notifier": "^2.5.0",
+    "yeoman-generator": "^2.0.5",
+    "yosay": "^2.0.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.10.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "jssha": "^2.3.1",
+    "prettier": "^1.14.2",
+    "stylelint-config-standard": "^18.2.0"
+  }
+}

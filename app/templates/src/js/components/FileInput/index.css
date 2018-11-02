@@ -1,0 +1,87 @@
+@import '../../../css/vars.css';
+
+.file-input-title {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  color: var(--blue);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--blue);
+  padding: 1rem;
+
+  & > i {
+    margin-right: 1rem;
+    font-size: 2rem;
+  }
+}
+
+.input-holder {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.form-input {
+  width: 100%;
+  height: 4rem;
+  border: none;
+  font-size: 1.5rem;
+  outline: none;
+  padding-left: 2rem;
+  box-shadow: var(--boxshadow);
+  letter-spacing: .2rem;
+  border-radius: .3rem;
+
+  &::placeholder {
+    opacity: .5;
+  }
+}
+
+.error-input {
+  border: solid .2rem var(--red) !important;
+
+  &-message {
+    position: absolute;
+    color: var(--red);
+    top: 7rem;
+    margin-left: 1rem;
+  }
+}
+
+.flex-row-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.single-row {
+  width: 100%;
+  position: relative;
+}
+
+.double-row {
+  width: 45%;
+  position: relative;
+}
+
+.triple-row {
+  width: 30%;
+  position: relative;
+}
+
+.quad-row {
+  width: 17.5%;
+  position: relative;
+}
+
+.quint-row {
+  width: 10%;
+  position: relative;
+}
+
+.required-input {
+  color: var(--red);
+  position: relative;
+  top: -.3rem;
+}

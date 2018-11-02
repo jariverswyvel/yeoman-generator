@@ -1,0 +1,52 @@
+@import '../../../css/vars.css';
+
+.form-button {
+  border: .2rem var(--blue) solid;
+  padding: 1rem 3.5rem;
+  letter-spacing: .3rem;
+  font-size: 1.5rem;
+  border-radius: .3rem;
+  z-index: 1;
+  position: relative;
+  background-color: transparent;
+  color: black;
+  width: fit-content;
+
+  &-blue {
+    border-color: var(--blue);
+  }
+
+  &-red {
+    border-color: var(--red);
+
+    &::after {
+      background-color: var(--red) !important;
+    }
+  }
+
+  &::after {
+    content: '';
+    background-color: var(--blue);
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: .1rem;
+    width: 7%;
+    transition: width .2s;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &:hover {
+    color: white;
+  }
+}
+
+.dark-button {
+  color: white !important;
+}

@@ -1,0 +1,7 @@
+@import '../../../../css/vars.css';
+
+.context-menu-divider {
+  height: .2rem;
+  width: 100%;
+  background-color: lightgrey;
+}

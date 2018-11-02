@@ -1,0 +1,24 @@
+@import '../../../../css/vars.css';
+
+.contextmenu-item {
+  padding: 1rem 3rem;
+
+  &:first-of-type {
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+  }
+
+  &:last-of-type {
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+  }
+
+  &:hover {
+    background-color: var(--blue);
+    color: white;
+  }
+
+  & i {
+    margin-right: 2rem;
+  }
+}

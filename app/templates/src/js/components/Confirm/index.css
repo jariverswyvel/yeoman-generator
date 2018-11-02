@@ -1,0 +1,54 @@
+@import '../../../css/vars.css';
+
+.confirm-container {
+  font-size: 1.5rem;
+  font-weight: 700;
+  right: 0 !important;
+  top: 120% !important;
+  z-index: 900;
+}
+
+.confirm-menu {
+  position: absolute;
+  background-color: white;
+  border-radius: .5rem;
+  color: black;
+  top: 4rem;
+  padding: .5rem 0;
+  right: -1rem;
+  box-shadow: var(--boxshadow);
+  /* animation: confirm_will_mount .2s; */
+
+  &-list-item {
+    padding: 1rem 2rem;
+    width: 17rem;
+
+    & i {
+      font-size: 1.7rem;
+    }
+
+    &:hover {
+      /* background-color: var(--blue); */
+      color: var(--blue);
+    }
+  }
+}
+
+.confirm-triangle {
+  color: #f7f7f7;
+  font-size: 1.8rem;
+  position: absolute;
+  top: -1.35rem;
+  right: .8rem;
+  text-shadow: 0rem -.1rem .2rem rgba(0, 0, 0, .1);
+}
+
+@keyframes confirm_will_mount {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

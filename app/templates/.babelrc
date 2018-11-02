@@ -1,0 +1,34 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [ "last 2 versions", "ie >= 10" ]
+        },
+        "modules": false,
+        "loose": true
+      }
+    ],
+    "@babel/react"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "decoratorsBeforeExport": true
+      }
+    ],
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    "react-hot-loader/babel"
+  ],
+  "env": {
+    "development": {
+      "plugins": [ "@babel/plugin-transform-react-jsx-source", "transform-react-stateless-component-name" ]
+    },
+    "production": {
+      "plugins": [ "lodash", "transform-react-remove-prop-types" ]
+    }
+  }
+}

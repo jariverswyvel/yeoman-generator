@@ -1,0 +1,14 @@
+@import '../../../css/vars.css';
+
+.switch-container {
+  margin-bottom: 3rem;
+}
+
+.switch {
+  font-size: 3rem;
+  margin-left: 2rem;
+
+  & .fa-toggle-on {
+    color: var(--green);
+  }
+}
