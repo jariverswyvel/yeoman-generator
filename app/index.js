@@ -63,7 +63,6 @@ module.exports = class extends Generator {
             port: 3000,
 
             nodemailer: false,
-            APIPort: 3001,
             crypto: false,
             license: false,
 
@@ -94,7 +93,7 @@ module.exports = class extends Generator {
                 type: `list`,
                 name: `appType`,
                 message: `What kind of app would you like? (frontEnd)`,
-                choices: [`frontEnd`, `API`]
+                choices: [`frontEnd`]
             },
             {
                 when: r => r.appType === `frontEnd`,
@@ -130,34 +129,6 @@ module.exports = class extends Generator {
                 name: `port`,
                 default: 3000,
                 message: `On what port would you like to run?`
-            },
-            {
-                when: r => r.appType === `API`,
-                type: `input`,
-                name: `APIPort`,
-                default: 3001,
-                message: `On what port would you like to run the API?`
-            },
-            {
-                when: r => r.appType === `API`,
-                type: `confirm`,
-                name: `license`,
-                default: false,
-                message: `Do you need a licence? (No)`
-            },
-            {
-                when: r => r.appType === `API`,
-                type: `confirm`,
-                name: `nodemailer`,
-                default: false,
-                message: `Do you need nodemailer? (No)`
-            },
-            {
-                when: r => r.appType === `API`,
-                type: `confirm`,
-                name: `crypto`,
-                default: false,
-                message: `Do you need crypto (No)?`
             }
         ]).then(props => {
             this.props = Object.assign(this.props, props);
@@ -292,22 +263,6 @@ module.exports = class extends Generator {
             }
         }
 
-        if (this.props.appType === `API`) {
-            appFiles = [...auth, ...config, ...controllers, ...models];
-
-            if (this.props.nodemailer) {
-                appFiles = [...appFiles, ...nodemailer];
-            }
-
-            if (this.props.crypto) {
-                appFiles = [...appFiles, ...crypto];
-            }
-
-            if (this.props.license) {
-                appFiles = [...appFiles, ...license];
-            }
-        }
-
         appFiles.forEach(f => this._copyFile(f));
 
         let dirs = [];
@@ -333,18 +288,6 @@ module.exports = class extends Generator {
 
         const git = [`README.md`, {from: `_gitignore`, to: `.gitignore`}];
 
-        const gitAPI = [{from: `server/README.md`, to: `README.md`}, {from: `server/_gitignore`, to: `.gitignore`}];
-
-        const indexAPI = [{from: `server/index.js`, to: `index.js`}];
-
-        const envAPI = [{from: `server/.env`, to: `.env`}];
-
-        const editorconfigAPI = [{from: `server/_editorconfig`, to: `.editorconfig`}];
-
-        const eslintAPI = [{from: `server/_eslintrc`, to: `.eslintrc`}];
-
-        const npmAPI = [{from: `server/_package.json`, to: `package.json`}];
-
         const eslint = [{from: `_eslintrc`, to: `.eslintrc`}];
 
         const stylelint = [`.stylelintrc`];
@@ -361,10 +304,6 @@ module.exports = class extends Generator {
 
         if (this.props.appType === `frontEnd`) {
             files = [...git, ...npm, ...eslint, ...stylelint, ...babel, ...webpack, ...postcss, ...editorconfig];
-        }
-
-        if (this.props.appType === `API`) {
-            files = [...gitAPI, ...indexAPI, ...envAPI, ...npmAPI, ...editorconfigAPI, ...eslintAPI];
         }
 
         files.forEach(f => this._copyFile(f));

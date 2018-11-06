@@ -65,6 +65,6 @@
     "webpack-dev-server": "^3.1.8",
     "whatwg-fetch": "^3.0.0"
   },
-  "author": "TnTap",
+  "author": "Jari Verswyvel",
   "license": "ISC"
 }
