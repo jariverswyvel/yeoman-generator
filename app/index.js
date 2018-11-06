@@ -212,35 +212,6 @@ module.exports = class extends Generator {
             ...UserComponent
         ];
 
-        const models = [{from: `server/app/models/user.js`, to: `app/models/user.js`}];
-
-        const controllers = [{from: `server/app/routes/UserController.js`, to: `app/routes/UserController.js`}];
-
-        const config = [{from: `server/config/db.js`, to: `config/db.js`}];
-
-        const nodemailer = [
-            {from: `server/lib/mailer/mailer.js`, to: `lib/mailer/mailer.js`},
-            {from: `server/app/routes/ContactController.js`, to: `app/routes/ContactController.js`}
-        ];
-
-        const crypto = [
-            {from: `server/lib/crypto/aes.js`, to: `lib/crypto/aes.js`},
-            {from: `server/lib/crypto/hash.js`, to: `lib/crypto/hash.js`}
-        ];
-
-        const auth = [
-            {from: `server/app/auth/models/mongodb.js`, to: `app/auth/models/mongodb.js`},
-            {from: `server/app/auth/TapAuth.js`, to: `app/auth/TapAuth.js`},
-            {from: `server/app/auth/TapAuth-v2.js`, to: `app/auth/TapAuth-v2.js`}
-        ];
-
-        const license = [
-            {from: `server/app/models/license.js`, to: `app/models/license.js`},
-            {from: `server/app/models/payment.js`, to: `app/models/payment.js`},
-            {from: `server/app/models/pricing.js`, to: `app/models/pricing.js`},
-            {from: `server/app/routes/LicenseController.js`, to: `app/routes/LicenseController.js`}
-        ];
-
         let appFiles = [];
 
         if (this.props.appType === `frontEnd`) {
